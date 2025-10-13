@@ -11,7 +11,7 @@ public class HashMapDemo {
         test.put("1banana", 3);
         test.put("cherry", 4);
         test.put("orange", 5);
-        test.put("1apple", 6);
+        test.put("apple", 6);
         test.put("mint", 7);
         test.put("coca", 8);
         test.put("b", 9);

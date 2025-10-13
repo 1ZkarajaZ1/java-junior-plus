@@ -59,7 +59,7 @@ public class SetComparisonDemo {
         System.out.println("linkedHashSetFind = " + duration + " " + f);
 
         startTime = System.nanoTime();
-        boolean z = treeSet.contains("Andrey7!");
+        boolean z = treeSet.contains("Andrey77");
         endTime = System.nanoTime();
         duration = endTime - startTime;
         System.out.println("TreeSetFind = " + duration + " " + z);
@@ -97,14 +97,3 @@ public class SetComparisonDemo {
 
 
 
-/*
-Задача:
-
-
-
-Что сравнивать:
-
-
-Порядок элементов при выводе
-
- */

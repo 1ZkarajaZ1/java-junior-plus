@@ -13,7 +13,7 @@ public class LinkedHashMapDemo {
         test.put("orange", 5);
         test.put("1apple", 6);
         test.put("mint", 7);
-        test.put("coca", 8);
+        test.put("coc", 8);
         test.put("b", 9);
         test.put("na", 10);
         for (Map.Entry<String, Integer> entry : test.entrySet()) {

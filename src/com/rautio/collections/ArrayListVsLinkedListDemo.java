@@ -22,7 +22,7 @@ public class ArrayListVsLinkedListDemo {
 
         listString.addAll(Arrays.asList(arrString));
         Collections.addAll(linkedlistInteger, arrInteger);
-       // добавление элемента в конец  LinkedList 8600 List 402600
+       // добавление элемента в конец  LinkedList 860 List 402600
         startTime = System.nanoTime();
         listString.add("Andre");
         endTime = System.nanoTime();

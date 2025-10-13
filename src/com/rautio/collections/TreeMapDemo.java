@@ -12,7 +12,7 @@ public class TreeMapDemo {
         test.put("cherry", 4);
         test.put("orange", 5);
         test.put("1apple", 6);
-        test.put("mint", 7);
+        test.put("min", 7);
         test.put("coca", 8);
         test.put("b", 9);
         test.put("na", 10);
