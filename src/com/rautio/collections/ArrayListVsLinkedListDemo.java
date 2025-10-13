@@ -13,7 +13,7 @@ public class ArrayListVsLinkedListDemo {
 
         String[] arrString = new String[100000];
         Integer[] arrInteger = new Integer[100000];
-        List<String> listString = new ArrayList<>();
+        List<String> listString = new ArrayList<>(100000);
         LinkedList<Integer> linkedlistInteger = new LinkedList<>();
 
 
