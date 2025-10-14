@@ -21,3 +21,13 @@ public class HashMapDemo {
         }
     }
 }
+
+//        for (Map.Entry<Integer,String> entry: hashMap.entrySet()) {
+//            System.out.println(entry.getKey() + " " + entry.getValue() + " "+ entry.getClass());
+//
+//        }
+//
+//        hashMap.entrySet().stream()
+//                .map(entry ->entry.getKey() + entry.getValue())
+//                .forEach(System.out::println);
+//        hashMap.forEach((key, value) -> System.out.println(key + value));
