@@ -141,6 +141,36 @@ public class QueueComparisonDemo {
         endTime = System.nanoTime();
         duration = endTime - startTime;
         System.out.println("Duration arrayDeque (poll) = " + duration);
+
+        //Извлечение
+        startTime = System.nanoTime();
+        while (!linkedListQueue1.isEmpty()) {
+            String client = linkedListQueue1.poll();
+            System.out.println("Обслуживаем: " + client);
+
+        }
+        endTime = System.nanoTime();
+        duration = endTime - startTime;
+        System.out.println("Duration linkedListQueue (pollAll) = " + duration);
+
+        startTime = System.nanoTime();
+        while (!priorityQueue1.isEmpty()) {
+            String client = priorityQueue1.poll();
+            System.out.println("Обслуживаем: " + client);
+        }
+        endTime = System.nanoTime();
+        duration = endTime - startTime;
+        System.out.println("Duration priorityQueue (pollAll) = " + duration);
+
+        startTime = System.nanoTime();
+        while (!arrayDeque1.isEmpty()) {
+            String client = arrayDeque1.poll();
+            System.out.println("Обслуживаем: " + client);
+        }
+        endTime = System.nanoTime();
+        duration = endTime - startTime;
+        System.out.println("Duration arrayDeque1 (pollAll) = " + duration);
+
     }
 }
 
