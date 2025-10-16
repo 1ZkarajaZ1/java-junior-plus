@@ -1,5 +1,11 @@
 package com.rautio.collections.practice;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -7,12 +13,29 @@ import java.util.stream.Collectors;
 
 public class TextAnalyser {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите текст: ");
-        String text = scanner.nextLine();
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Введите текст: ");
+//        String text = scanner.nextLine();
+//        if (text == null || text.trim().isEmpty()) {
+//            System.out.println("Текст не введен!");
+//            return;
+//        }
+
+        Path path = Paths.get("input.txt");
+        String text =null;
+        try {
+            text = Files.readString(path, Charset.forName("Windows-1251"));
+        }
+        catch (IOException e) {
+            System.out.println("Ошибка чтения файла" + e.getMessage());
+            System.exit(1);
+        }
+
+
         String cleanWord = text.replaceAll("[^a-zA-Zа-яА-Я0-9]", " ").toLowerCase();//Очистка слов от знаков препинания:
         String[] words = cleanWord.trim().split("\\s+");  // Разделитель: пробелы, табы, переносы
         Arrays.sort(words);
+        //Set<String> uniqueSortedWords = new TreeSet<>(Arrays.asList(words));
         HashMap<String, Integer> textMapCount = new HashMap<>();
 //        List<String> sortedList = Arrays.asList(words);
 //        List<String> sortedList1 = new ArrayList<>(Arrays.asList(words));
@@ -88,21 +111,7 @@ public class TextAnalyzer {
 
 Вариант 2: Разбиение на слова
 
-String[] words = text.split("\\s+"); // Разделитель: пробелы, табы, переносы
-🛠 Дополнительные советы:
 
-java
-String cleanWord = word.replaceAll("[^a-zA-Zа-яА-Я0-9]", "").toLowerCase();
-Пример полной структуры:
-java
-public class TextAnalyzer {
-    public void analyze() {
-        // 1. Чтение текста
-        // 2. Разбиение на слова + очистка
-        // 3. Подсчёт статистики (Map для частот, Set для уникальных)
-        // 4. Вывод результатов
-    }
-}
 ⚠️ Важные моменты:
 Обработай пустой ввод
 
