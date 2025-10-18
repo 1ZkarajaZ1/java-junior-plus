@@ -16,7 +16,7 @@ public class VoteSystem {
     public static void main(String[] args) {
         VoteSystem x1 = new VoteSystem();
         x1.startVoting();
-
+        x1.printWinners();
     }
 
     public void startVoting() {
@@ -36,8 +36,9 @@ public class VoteSystem {
                 case 3 -> candidate = Candidates.СИДОРОВ;
                 case 4 -> candidate = Candidates.ПРОТИВ_ВСЕХ;
             }
-            // Вариант 1: Method reference (более читаемо)
-            voteCalc.merge(candidate, 1, Integer::sum);
+            if (scanInput == 0)
+                // Вариант 1: Method reference (более читаемо)
+                voteCalc.merge(candidate, 1, Integer::sum);
 // Вариант 2: Lambda expression (более явно)
 // voteCalc.merge(candidate, 1, (oldValue, newValue) -> oldValue + newValue);
 // Вариант 3: Классический подход (без merge)
@@ -49,7 +50,8 @@ public class VoteSystem {
         }
         while (scanInput != 0);
         System.out.println("Голосование окончено");
-
+    }
+    public void printWinners() {
         Optional<Map.Entry<Candidates, Integer>> winner = voteCalc.entrySet().stream()
                 .max(Map.Entry.comparingByValue());
         if (winner.isPresent()) {
