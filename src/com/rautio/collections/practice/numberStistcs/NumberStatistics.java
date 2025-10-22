@@ -41,9 +41,9 @@ public class NumberStatistics {
             List<Integer> sorted = new ArrayList<>(numStatList);
             Collections.sort(sorted);
             int middle = sorted.size() / 2;
-            if (middle%2==1){
+            if (sorted.size()%2==1){
                 return sorted.get(middle);
-            } else return (sorted.get(middle - 1) + sorted.get(middle + 1)) / 2.0;
+            } else return (sorted.get(middle - 1) + sorted.get(middle)) / 2.0;
      }
     public void mostFreqNums() {
         int max_Frequency = 0;
